@@ -1,7 +1,7 @@
-# jdlfj
+# ReadMe generator
 ![github license](https://img.shields.io/badge/license-MIT-blue.svg)
 ## Description
-lkdjfa
+quickly generate readMe using terminal
 
 ## Table of contents
 -[Installation](#Installation)
@@ -12,23 +12,23 @@ lkdjfa
 
 
 ## Installation
-fjlkdjfa
+js, node.js
 
 ## Usage
-jdlfajf
+prompt using node index.js
 
 ## Contribution
-jlajf
+contributtion welcome
 
 
 ## Tests
-lkdjf
+No tests?
 
 ## Github username
-ldkjf
+brendaleea
 
 ## Email Address
-ljdlfaj
+blsarabia7@gmail.com
 
 ## License 
     MIT
