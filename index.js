@@ -1,81 +1,117 @@
+// TODO: Include packages needed for this application
 const inqurier= require('inquirer')
 const fs = require('fs')
-
-function generateHtml({ Title, Description, Contents, Installation, usage, contribution, Tests, License, Username, Email  })
-
-inqurier.prompt([
-
-  { 
-    type: 'input',
-    message:'What is your Project title?',
-    name:'title',
-},
-{ 
-    type:'input',
-    message:'Provide a short description',
-    name:'Description',
-},
-
-{ 
-    type: 'input',
-    message: 'Add table of contents if applicable?',
-    name: 'Contents'
-},
-
-{
-    type: 'input',
-    message: 'What are the steps required to install your project?',
-    name: 'Installation'
-},
-
-
-{ 
-    type: 'input',
-    message: 'Provide instructions and examples for use',
-    name: 'Usage'
-},
-
-{ 
-    type: 'input',
-    message: 'How to contribute',
-    name: 'Contribution'
-},
-
-{ 
-    type: 'input',
-    message: 'Tests',
-    name: 'Tests'
-},
-
-{ 
-    type: 'input',
-    message: 'What License is used?',
-    name: 'License'
-},
-
-
-{ 
-    type: 'input',
-    message: 'Github Username?',
-    name: 'Username',
-},
-
-{ 
-    type: 'input',
-    message: 'Email Address?',
-    name: 'Email'
-},
+const generateMarkdown = require('./utils/generateMarkdown')
+// TODO: Create an array of questions for user input
+const questions = [
+    { 
+        type: 'input',
+        message:'What is your Project title?',
+        name:'title',
+    },
+    { 
+        type:'input',
+        message:'Provide a short description',
+        name:'Description',
+    },
+    
+  
+    
+    {
+        type: 'input',
+        message: 'What are the steps required to install your project?',
+        name: 'Installation'
+    },
+    
+    
+    { 
+        type: 'input',
+        message: 'Provide instructions and examples for use',
+        name: 'Usage'
+    },
+    
+    { 
+        type: 'input',
+        message: 'How to contribute',
+        name: 'Contribution'
+    },
+    
+    { 
+        type: 'input',
+        message: 'Tests',
+        name: 'Tests'
+    },
+    
+    { 
+        type: 'list',
+        message: 'What License is used?',
+        name: 'License',
+        choices:[ 'MIT','GPL','BSD','No']
+    },
+    
+    
+    { 
+        type: 'input',
+        message: 'Github Username?',
+        name: 'Github_username',
+    },
+    
+    { 
+        type: 'input',
+        message: 'Email Address?',
+        name: 'Email'
+    },
 
 
 
-]).then((response)=>{
- const html= generateHtml(response)
 
- console.log(html)
 
-})
 
-fs.writeFile('index.html',html),(err)=>{
-err? console.error(err):console.log('Build an html page')
+];
+
+// TODO: Create a function to write README file
+function writeToFile(fileName, data) {}
+
+// TODO: Create a function to initialize app
+function init() {
+    inqurier.prompt(questions)
+    .then((data)=>{ fs.writeFileSync('./dist/readme.md', generateMarkdown(data))
+
+    })
 
 }
+
+// Function call to initialize app
+init();
+
+
+
+
+
+
+// function generateHtml({ title,description, contents }) {
+
+  
+
+
+//  }
+
+
+
+
+
+// inqurier.prompt([
+
+  
+
+
+
+// ]).then((response)=>{
+//  console.log(response)
+
+// })
+
+// fs.writeFile('index.html',html),(err)=>{
+// err? console.error(err):console.log('Build an html page')
+
+// }
